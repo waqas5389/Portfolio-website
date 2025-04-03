@@ -1,5 +1,5 @@
-@import '/Seperate-Files/navbar.css';
-@import '/Seperate-Files/footer.css'; 
+@import 'Portfolio-website/Seperate-Files/footer.css'; 
+@import 'Portfolio-website/Seperate-Files/navbar.css'; 
  
  /* Base Styles */
         :root {
