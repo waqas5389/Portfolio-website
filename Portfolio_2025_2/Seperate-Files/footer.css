@@ -1,0 +1,196 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Footer styles - FIXED */
+.portfolio-footer {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 4rem 0 2rem;
+    position: relative;
+    width: 100%; /* Ensure full width */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Changed from center to better align content */
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Brand/Logo Section */
+.footer-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+/* Navigation Links */
+.footer-nav {
+    display: flex;
+    gap: 1.8rem; /* Increased gap */
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0; /* Added padding for better touch targets */
+}
+
+.footer-nav a:hover {
+    color: var(--primary);
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    gap: 1.2rem; /* Increased gap */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    font-size: 1.1rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.made-with-love {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.heart-icon {
+    color: #ff4d4d;
+    display: inline-flex;
+    animation: heartbeat 1.5s ease infinite;
+}
+
+#Name-highlight {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.2);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem; /* Increased gap */
+    }
+    
+    .footer-nav {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem; /* Increased gap */
+        padding-top: 2rem; /* More padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-nav {
+        gap: 1.5rem;
+        justify-content: center;
+        flex-direction: column; /* Stack vertically on very small screens */
+    }
+}
