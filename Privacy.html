@@ -4,424 +4,450 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy & Data Protection - Notezy Note</title>
-    <link rel="stylesheet" href="privacy-policy.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #ffffff;
+        }
+
+        .container {
+            min-height: 100vh;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid #bfdbfe;
+        }
+
+        .badge-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .meta-info {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .privacy-badge {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #1e40af;
+            background-color: #eff6ff;
+        }
+
+        .back-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Card Styles */
+        .intro-card,
+        .section-card,
+        .contact-card,
+        .age-card {
+            border: 1px solid #e5e7eb;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out forwards;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-card {
+            animation-delay: 0.2s;
+            border-color: #bfdbfe;
+        }
+
+        .age-card {
+            animation-delay: 0.25s;
+            border-color: #fed7aa;
+            background-color: #fff7ed;
+        }
+
+        .section-card:nth-of-type(3) { animation-delay: 0.3s; }
+        .section-card:nth-of-type(4) { animation-delay: 0.4s; }
+        .section-card:nth-of-type(5) { animation-delay: 0.5s; }
+        .section-card:nth-of-type(6) { animation-delay: 0.6s; }
+        .section-card:nth-of-type(7) { animation-delay: 0.7s; }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .card-header.centered {
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 1rem;
+        }
+
+        .card-accent {
+            width: 0.25rem;
+            height: 2rem;
+            background-color: #2563eb;
+            border-radius: 9999px;
+        }
+
+        .card-title,
+        .section-title {
+            font-size: 1.5rem;
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .contact-title {
+            font-size: 1.875rem;
+            color: #111827;
+            margin-bottom: 0;
+        }
+
+        .card-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #374151;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        .card-content.centered {
+            text-align: center;
+        }
+
+        .card-content p {
+            margin-bottom: 1rem;
+        }
+
+        .card-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .age-highlight {
+            font-weight: 600;
+            color: #ea580c;
+        }
+
+        /* Icon Containers */
+        .icon-container {
+            padding: 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #dbeafe;
+            border-radius: 0.75rem;
+            border: 1px solid #bfdbfe;
+            flex-shrink: 0;
+        }
+
+        .age-icon-container {
+            background-color: #fed7aa;
+            border-color: #fdba74;
+        }
+
+        .section-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #2563eb;
+        }
+
+        .age-icon {
+            color: #ea580c;
+        }
+
+        /* Highlight Card */
+        .highlight-card {
+            border: 1px solid #bbf7d0;
+            background: linear-gradient(to right, #dcfce7, #dbeafe);
+            border-radius: 0.5rem;
+            margin: 3rem 0;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .highlight-content {
+            padding: 2rem;
+        }
+
+        .highlight-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-icon {
+            padding: 1rem;
+            background-color: #dcfce7;
+            border-radius: 0.75rem;
+            border: 1px solid #bbf7d0;
+        }
+
+        .highlight-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: #166534;
+        }
+
+        .highlight-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .highlight-content p {
+            color: #374151;
+            line-height: 1.75;
+            font-size: 1.125rem;
+        }
+
+        /* Separator */
+        .separator {
+            height: 1px;
+            background-color: #e5e7eb;
+            margin: 3rem 0;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            animation-delay: 1s;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .contact-icon {
+            padding: 0.75rem;
+            background-color: #dbeafe;
+            border-radius: 0.75rem;
+            border: 1px solid #bfdbfe;
+        }
+
+        .contact-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #2563eb;
+        }
+
+        .contact-link {
+            color: #2563eb;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            font-weight: 500;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #1e40af;
+            text-decoration-color: #1e40af;
+        }
+
+        .response-time {
+            color: #6b7280;
+            font-size: 1rem !important;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out 1.2s forwards;
+        }
+
+        .footer-separator {
+            height: 1px;
+            background-color: #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .copyright {
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .designed-by {
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .heart-icon {
+            width: 1rem;
+            height: 1rem;
+            color: #ef4444;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .card-content {
+                font-size: 1rem;
+            }
+
+            .highlight-title {
+                font-size: 1.5rem;
+            }
+
+            .highlight-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .card-header,
+            .card-content {
+                padding: 1rem;
+            }
+
+            .highlight-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
-
-
-<style>
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    line-height: 1.6;
-    color: #374151;
-    background-color: #ffffff;
-}
-
-.container {
-    min-height: 100vh;
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
-}
-
-/* Header Styles */
-.header {
-    margin-bottom: 3rem;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.header-content {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #dbeafe;
-    color: #1d4ed8;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    border: 1px solid #bfdbfe;
-}
-
-.badge-icon {
-    width: 1rem;
-    height: 1rem;
-}
-
-.main-title {
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
-    max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.meta-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-@media (min-width: 768px) {
-    .meta-info {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.meta-icon {
-    width: 1rem;
-    height: 1rem;
-}
-
-.privacy-badge {
-    background-color: #dcfce7;
-    color: #166534;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    border: 1px solid #bbf7d0;
-}
-
-/* Card Styles */
-.intro-card,
-.section-card,
-.contact-card {
-    border: 1px solid #e5e7eb;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.intro-card {
-    animation-delay: 0.2s;
-}
-
-.section-card:nth-child(1) { animation-delay: 0.3s; }
-.section-card:nth-child(2) { animation-delay: 0.4s; }
-.section-card:nth-child(3) { animation-delay: 0.5s; }
-.section-card:nth-child(4) { animation-delay: 0.6s; }
-.section-card:nth-child(5) { animation-delay: 0.7s; }
-
-.card-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
-}
-
-.card-header.centered {
-    text-align: center;
-    padding-bottom: 1rem;
-}
-
-.card-accent {
-    width: 0.25rem;
-    height: 2rem;
-    background-color: #2563eb;
-    border-radius: 9999px;
-}
-
-.card-title,
-.section-title {
-    font-size: 1.5rem;
-    color: #111827;
-    font-weight: 600;
-}
-
-.contact-title {
-    font-size: 1.875rem;
-    color: #111827;
-    margin-bottom: 1rem;
-}
-
-.card-content {
-    padding: 0 1.5rem 1.5rem;
-    color: #374151;
-    font-size: 1.125rem;
-    line-height: 1.75;
-}
-
-.card-content.centered {
-    text-align: center;
-}
-
-.card-content p {
-    margin-bottom: 1rem;
-}
-
-.card-content p:last-child {
-    margin-bottom: 0;
-}
-
-.highlight {
-    font-weight: 600;
-    color: #2563eb;
-}
-
-/* Section Card Specific */
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-direction : row;
-}
-
-.icon-container {
-    padding: 0.7rem;
-    display :flex;
-    justify-content:center;
-    align-item:center; 
-    background-color: #dbeafe;
-    border-radius: 0.75rem;
-    border: 1px solid #bfdbfe;
-}
-
-.section-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #2563eb;
-}
-
-/* Highlight Card */
-.highlight-card {
-    border: 1px solid #bbf7d0;
-    background: linear-gradient(to right, #dcfce7, #dbeafe);
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s ease-out 0.8s forwards;
-}
-
-.highlight-content {
-    padding: 2rem;
-}
-
-.highlight-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.highlight-icon {
-    padding: 1rem;
-    background-color: #dcfce7;
-    border-radius: 0.75rem;
-    border: 1px solid #bbf7d0;
-}
-
-.highlight-icon svg {
-    width: 2rem;
-    height: 2rem;
-    color: #166534;
-}
-
-.highlight-title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: #111827;
-}
-
-.highlight-content p {
-    color: #374151;
-    line-height: 1.75;
-    font-size: 1.125rem;
-}
-
-/* Separator */
-.separator {
-    height: 1px;
-    background-color: #e5e7eb;
-    margin: 3rem 0;
-}
-
-/* Contact Section */
-.contact-card {
-    animation-delay: 1s;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 2rem 0 1.5rem;
-}
-
-.contact-icon {
-    padding: 0.75rem;
-    background-color: #dbeafe;
-    border-radius: 0.75rem;
-    border: 1px solid #bfdbfe;
-}
-
-.contact-icon svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #2563eb;
-}
-
-.contact-link {
-    color: #2563eb;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    font-weight: 500;
-    font-size: 1.125rem;
-    transition: all 0.3s ease;
-}
-
-.contact-link:hover {
-    color: #1e40af;
-    text-decoration-color: #1e40af;
-}
-
-.response-time {
-    color: #6b7280;
-    font-size: 1rem !important;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 2rem 0;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s ease-out 1.2s forwards;
-}
-
-.footer-separator {
-    height: 1px;
-    background-color: #e5e7eb;
-    margin-bottom: 2rem;
-}
-
-.copyright {
-    color: #6b7280;
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-}
-
-.designed-by {
-    color: #9ca3af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-}
-
-.heart-icon {
-    width: 1rem;
-    height: 1rem;
-    color: #ef4444;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 2rem 1rem;
-    }
-
-    .main-title {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .card-content {
-        font-size: 1rem;
-    }
-
-    .highlight-title {
-        font-size: 1.5rem;
-    }
-
-    .highlight-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 1.5rem 0.75rem;
-    }
-
-    .card-header,
-    .card-content {
-        padding: 1rem;
-    }
-
-    .highlight-content {
-        padding: 1.5rem;
-    }
-}
-
-
-
-
-
-</style>
-
-
-
-
-
 <body>
     <div class="container">
         <!-- Header -->
@@ -445,7 +471,7 @@ body {
                             <line x1="8" x2="8" y1="2" y2="6"/>
                             <line x1="3" x2="21" y1="10" y2="10"/>
                         </svg>
-                        <span>Effective Date: June 8, 2025</span>
+                        <span>Effective Date: June 26, 2025</span>
                     </div>
                     <div class="meta-item">
                         <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -464,14 +490,41 @@ body {
             </div>
         </header>
 
+        <!-- Back Button -->
+        <a href="javascript:history.back()" class="back-button">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+            Back to Home
+        </a>
+
         <!-- Introduction Card -->
         <div class="intro-card">
             <div class="card-header">
                 <div class="card-accent"></div>
-                <h2 class="card-title">About Simple Notes</h2>
+                <h2 class="card-title">About Notezy Note</h2>
             </div>
             <div class="card-content">
                 <p>Notezy Note is a personal note-taking application developed by <span class="highlight">Naveed Ahmed</span>. This app is designed with your privacy as the top priority. Below is a clear and transparent explanation of how your data is handled.</p>
+            </div>
+        </div>
+
+        <!-- Age Restriction Card -->
+        <div class="age-card">
+            <div class="card-header">
+                <div class="icon-container age-icon-container">
+                    <svg class="section-icon age-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="m22 21-2-2"/>
+                        <path d="m16 16 2 2"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Age Requirement</h2>
+            </div>
+            <div class="card-content">
+                <p class="age-highlight">This app is intended for users aged 18 and above. We do not knowingly collect or store any data from individuals under 18.</p>
             </div>
         </div>
 
@@ -491,9 +544,9 @@ body {
                     <h2 class="section-title">1. Data Storage</h2>
                 </div>
                 <div class="card-content">
-                    <p>• Local Storage Only: All notes you create are stored locally on your device using Android's secure internal storage and Room Database.</p>
-                    <p>• No Cloud Sync: The app does not send or store any data on external servers or cloud services.</p>
-                    <p>• Complete Privacy: Your notes never leave your device, ensuring complete privacy and security.</p>
+                    <p>• <strong>Local Storage Only:</strong> All notes you create are stored locally on your device using Android's secure internal storage and Room Database.</p>
+                    <p>• <strong>No Cloud Sync:</strong> The app does not send or store any data on external servers or cloud services.</p>
+                    <p>• <strong>Complete Privacy:</strong> Your notes never leave your device, ensuring complete privacy and security.</p>
                 </div>
             </article>
 
@@ -511,9 +564,9 @@ body {
                 </div>
                 <div class="card-content">
                     <p>Notezy Note is designed to work completely offline:</p>
-                    <p>• No Internet Required: The app does not require internet access and functions completely offline.</p>
-                    <p>• Minimal Permissions: The app does not request any sensitive permissions such as location, contacts, camera, or microphone.</p>
-                    <p>• No Data Collection: We do not collect any personal information, usage statistics, or analytics data.</p>
+                    <p>• <strong>No Internet Required:</strong> The app does not require internet access and functions completely offline.</p>
+                    <p>• <strong>Minimal Permissions:</strong> The app does not request any sensitive permissions such as location, contacts, camera, or microphone.</p>
+                    <p>• <strong>No Data Collection:</strong> We do not collect any personal information, usage statistics, or analytics data.</p>
                 </div>
             </article>
 
@@ -532,9 +585,9 @@ body {
                 </div>
                 <div class="card-content">
                     <p>Notezy Note maintains complete independence from third-party services:</p>
-                    <p>• No Data Sharing: No data is shared with third parties under any circumstances.</p>
-                    <p>• No External Services: No third-party services such as ads, analytics, or crash reporting are integrated.</p>
-                    <p>• No Tracking: The app does not track your usage patterns or behavior.</p>
+                    <p>• <strong>No Data Sharing:</strong> No data is shared with third parties under any circumstances.</p>
+                    <p>• <strong>No External Services:</strong> No third-party services such as ads, analytics, or crash reporting are integrated.</p>
+                    <p>• <strong>No Tracking:</strong> The app does not track your usage patterns or behavior.</p>
                 </div>
             </article>
 
@@ -554,9 +607,9 @@ body {
                 </div>
                 <div class="card-content">
                     <p>You have full control over your data:</p>
-                    <p>• Delete Anytime: You can delete your notes anytime from within the app.</p>
-                    <p>• Complete Removal: Uninstalling the app will permanently remove all your data stored on the device.</p>
-                    <p>• No Recovery: Since we don't store data externally, once deleted, your notes cannot be recovered by us.</p>
+                    <p>• <strong>Delete Anytime:</strong> You can delete your notes anytime from within the app.</p>
+                    <p>• <strong>Complete Removal:</strong> Uninstalling the app will permanently remove all your data stored on the device.</p>
+                    <p>• <strong>No Recovery:</strong> Since we don't store data externally, once deleted, your notes cannot be recovered by us.</p>
                 </div>
             </article>
 
@@ -576,21 +629,21 @@ body {
                     <p>Any changes will be communicated through app updates and will require your explicit consent.</p>
                 </div>
             </article>
+        </div>
 
-            <!-- Highlight Section -->
-            <div class="highlight-card">
-                <div class="highlight-content">
-                    <div class="highlight-header">
-                        <div class="highlight-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-                                <path d="m7 11V7a5 5 0 0 1 10 0v4"/>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-title">🔒 Zero Data Sharing</h3>
+        <!-- Highlight Section -->
+        <div class="highlight-card">
+            <div class="highlight-content">
+                <div class="highlight-header">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                            <path d="m7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
                     </div>
-                    <p>Your notes and personal data are never shared with anyone, anywhere, at any time. What stays on your device, stays on your device.</p>
+                    <h3 class="highlight-title">🔒 Zero Data Sharing</h3>
                 </div>
+                <p>Your notes and personal data are never shared with anyone, anywhere, at any time. What stays on your device, stays on your device.</p>
             </div>
         </div>
 
