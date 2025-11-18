@@ -5,51 +5,215 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TranslateNow — Privacy Policy</title>
   <style>
-    :root{--bg:#f7fafc;--card:#ffffff;--accent:#2563eb;--muted:#6b7280;--text:#111827}
-    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .container{max-width:900px;margin:48px auto;padding:28px}
-    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.06);padding:28px}
-    h1{margin:0 0 6px;font-size:28px}
-    .meta{color:var(--muted);margin-bottom:22px}
-    h2{font-size:18px;margin-top:20px}
-    p{line-height:1.6;color:#1f2937}
-    ul{margin:10px 0 18px 20px}
-    code{background:#f3f4f6;padding:2px 6px;border-radius:6px;font-family:monospace}
-    .footer{margin-top:26px;padding-top:16px;border-top:1px solid #eef2f7;color:var(--muted);font-size:14px}
-    a.button{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;margin-top:10px}
-    @media (max-width:640px){.container{margin:20px;padding:16px}.card{padding:18px}}
+    :root{
+      --teal-primary:#00897B;
+      --teal-light:#E0F2F1;
+      --teal-dark:#00695C;
+      --bg:#F5F5F5;
+      --card:#FFFFFF;
+      --text:#212121;
+      --text-muted:#757575;
+      --border:#E0E0E0;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    
+    /* Header Banner */
+    .header{
+      background:var(--teal-primary);
+      color:white;
+      padding:48px 20px;
+      text-align:center;
+    }
+    .header h1{font-size:36px;margin-bottom:8px;font-weight:700}
+    .header .subtitle{font-size:16px;opacity:0.95}
+    
+    /* Container */
+    .container{max-width:900px;margin:-40px auto 48px;padding:0 20px;position:relative}
+    
+    /* Main Card */
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:40px;
+      position:relative;
+    }
+    
+    /* Badge */
+    .badge{
+      display:inline-block;
+      background:var(--teal-light);
+      color:var(--teal-dark);
+      padding:8px 16px;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:24px;
+    }
+    
+    /* Typography */
+    .intro{
+      font-size:18px;
+      color:var(--text-muted);
+      margin-bottom:32px;
+      padding-bottom:24px;
+      border-bottom:2px solid var(--border);
+    }
+    
+    h2{
+      font-size:22px;
+      margin:32px 0 16px;
+      color:var(--teal-primary);
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    h2:before{
+      content:'';
+      width:4px;
+      height:24px;
+      background:var(--teal-primary);
+      border-radius:2px;
+    }
+    
+    p{margin:12px 0;color:var(--text)}
+    strong{color:var(--teal-dark)}
+    
+    /* Lists */
+    ul{margin:16px 0 24px 0;padding-left:0;list-style:none}
+    ul li{
+      padding:10px 0 10px 36px;
+      position:relative;
+      color:var(--text);
+    }
+    ul li:before{
+      content:'✓';
+      position:absolute;
+      left:0;
+      color:var(--teal-primary);
+      font-weight:700;
+      font-size:18px;
+    }
+    
+    /* Info Box */
+    .info-box{
+      background:var(--teal-light);
+      border-left:4px solid var(--teal-primary);
+      padding:20px 24px;
+      border-radius:8px;
+      margin:24px 0;
+    }
+    .info-box p{margin:8px 0;color:var(--teal-dark)}
+    .info-box strong{color:var(--teal-dark)}
+    
+    /* Contact Section */
+    .contact{
+      background:var(--bg);
+      border-radius:12px;
+      padding:24px;
+      margin:32px 0;
+    }
+    .contact h3{
+      color:var(--teal-primary);
+      margin-bottom:16px;
+      font-size:20px;
+    }
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 0;
+      color:var(--text);
+    }
+    .contact-icon{
+      width:40px;
+      height:40px;
+      background:var(--teal-light);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--teal-primary);
+      font-weight:700;
+      flex-shrink:0;
+    }
+    
+    /* Footer */
+    .footer{
+      margin-top:40px;
+      padding-top:32px;
+      border-top:2px solid var(--border);
+      text-align:center;
+    }
+    .footer p{color:var(--text-muted);margin-bottom:20px}
+    
+    /* Button */
+    .button{
+      display:inline-block;
+      background:var(--teal-primary);
+      color:white;
+      padding:14px 32px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      transition:background 0.3s;
+    }
+    .button:hover{background:var(--teal-dark)}
+    
+    /* Responsive */
+    @media (max-width:640px){
+      .header{padding:32px 20px}
+      .header h1{font-size:28px}
+      .container{margin:-30px auto 32px}
+      .card{padding:24px;border-radius:12px}
+      h2{font-size:20px}
+      .contact{padding:20px}
+    }
   </style>
 </head>
 <body>
+  <!-- Header Banner -->
+  <div class="header">
+    <h1>TranslateNow</h1>
+    <div class="subtitle">Privacy Policy</div>
+  </div>
+
+  <!-- Main Content -->
   <main class="container">
     <article class="card">
-      <h1>TranslateNow — Privacy Policy</h1>
-      <div class="meta">Last Updated: <strong>[Add Date]</strong></div>
+      <div class="badge">Last Updated: November 18, 2025</div>
 
-      <p>This Privacy Policy explains how TranslateNow ("we", "our", or "us") handles information when you use the TranslateNow mobile application. TranslateNow is developed by <strong>Muhammad Waqas</strong> on behalf of <strong>CodeMate</strong>.</p>
+      <p class="intro">
+        This Privacy Policy explains how TranslateNow ("we", "our", or "us") handles information when you use the TranslateNow mobile application. TranslateNow is developed by <strong>Muhammad Waqas</strong> on behalf of <strong>CodeMate</strong>.
+      </p>
 
       <h2>1. No Collection of Personal Data</h2>
       <p>TranslateNow does <strong>not</strong> collect, store, or share any personal data. You do not need to create an account or provide personal information to use the app.</p>
-      <p>Specifically, TranslateNow does not collect:</p>
-      <ul>
-        <li>Names, emails, or phone numbers</li>
-        <li>Contacts or address book data</li>
-        <li>Location data</li>
-        <li>Cookies or tracking identifiers</li>
-        <li>Usage analytics that identify you personally</li>
-      </ul>
+      
+      <div class="info-box">
+        <p><strong>We do NOT collect:</strong></p>
+        <ul style="margin:12px 0">
+          <li>Names, emails, or phone numbers</li>
+          <li>Contacts or address book data</li>
+          <li>Location data</li>
+          <li>Cookies or tracking identifiers</li>
+          <li>Usage analytics that identify you personally</li>
+        </ul>
+      </div>
 
       <h2>2. Translation Data (Text &amp; Voice Only)</h2>
       <p>To provide translations, TranslateNow sends the <strong>text and voice</strong> input you provide directly to the <strong>Google Translate API</strong>. The app does <strong>not</strong> support image uploads or image-based translation — no image data is sent or processed.</p>
-      <p>Important details:</p>
+      
+      <p><strong>Important details:</strong></p>
       <ul>
-        <li>The app does not store your text or voice content on our servers.</li>
-        <li>TranslateNow does not retain translation requests after the translation is completed.</li>
-        <li>We do not share your input with third parties except for the Google Translate API which processes the translation request.</li>
+        <li>The app does not store your text or voice content on our servers</li>
+        <li>TranslateNow does not retain translation requests after completion</li>
+        <li>We do not share your input with third parties except Google Translate API</li>
       </ul>
 
       <h2>3. Third-Party Services</h2>
-      <p>TranslateNow uses the Google Translate API to perform translations. When you submit text or voice for translation, that data is transmitted to Google for processing. We do not control Google's processing or retention policies. Please review Google&apos;s privacy documentation for details about how Google handles data.</p>
+      <p>TranslateNow uses the Google Translate API to perform translations. When you submit text or voice for translation, that data is transmitted to Google for processing. We do not control Google's processing or retention policies. Please review Google's privacy documentation for details about how Google handles data.</p>
 
       <h2>4. Data Security</h2>
       <p>Because TranslateNow does not store personal data, there is minimal risk of personal data exposure. All communication with the Google Translate API is performed over secure, encrypted channels (HTTPS).</p>
@@ -62,15 +226,35 @@
 
       <h2>7. Contact Information</h2>
       <p>If you have questions about this Privacy Policy or want to request further information, please contact the developer:</p>
-      <ul>
-        <li><strong>Developer:</strong> Muhammad Waqas</li>
-        <li><strong>Company:</strong> CodeMate</li>
-        <li><strong>Email:</strong> <em>[your-email@example.com]</em></li>
-      </ul>
+      
+      <div class="contact">
+        <h3>Get in Touch</h3>
+        <div class="contact-item">
+          <div class="contact-icon">👤</div>
+          <div>
+            <strong>Developer</strong><br>
+            Muhammad Waqas
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <strong>Company</strong><br>
+            CodeMate
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Email</strong><br>
+            muhaammaadwaqas@gmail.com
+          </div>
+        </div>
+      </div>
 
       <div class="footer">
         <p>Thank you for using TranslateNow. We respect your privacy and aim to keep translations simple, fast, and secure.</p>
-        <a href="#" class="button">Export as PDF (optional)</a>
+        <a href="#" class="button" onclick="window.print();return false">Export as PDF</a>
       </div>
     </article>
   </main>
