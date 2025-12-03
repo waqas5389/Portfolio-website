@@ -14,32 +14,45 @@
       --text:#212121;
       --text-muted:#757575;
       --border:#E0E0E0;
+      --warning:#FF6F00;
+      --warning-light:#FFF3E0;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html,body{height:100%;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-    .header{background:var(--teal-primary);color:white;padding:48px 20px;text-align:center;}
+    .header{background:linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-dark) 100%);color:white;padding:48px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
     .header h1{font-size:36px;margin-bottom:8px;font-weight:700}
     .header .subtitle{font-size:16px;opacity:0.95}
     .container{max-width:900px;margin:-40px auto 48px;padding:0 20px;position:relative}
-    .card{background:var(--card);border-radius:16px;padding:40px;position:relative;}
-    .badge{display:inline-block;background:var(--teal-light);color:var(--teal-dark);padding:8px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:24px;}
-    .intro{font-size:18px;color:var(--text-muted);margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--border);}
-    h2{font-size:22px;margin:32px 0 16px;color:var(--teal-primary);font-weight:700;display:flex;align-items:center;gap:12px;}
-    h2:before{content:'';width:4px;height:24px;background:var(--teal-primary);border-radius:2px;}
+    .card{background:var(--card);border-radius:16px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+    .badge{display:inline-block;background:var(--teal-light);color:var(--teal-dark);padding:8px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:24px}
+    .intro{font-size:18px;color:var(--text-muted);margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--border)}
+    h2{font-size:22px;margin:40px 0 16px;color:var(--teal-primary);font-weight:700;display:flex;align-items:center;gap:12px}
+    h2:first-of-type{margin-top:0}
+    h2:before{content:'';width:4px;height:24px;background:var(--teal-primary);border-radius:2px}
+    h3{font-size:18px;margin:24px 0 12px;color:var(--teal-dark);font-weight:600}
     p{margin:12px 0;color:var(--text)}
     strong{color:var(--teal-dark)}
     ul{margin:16px 0 24px 0;padding-left:0;list-style:none}
-    ul li{padding:10px 0 10px 36px;position:relative;color:var(--text);}
-    ul li:before{content:'✓';position:absolute;left:0;color:var(--teal-primary);font-weight:700;font-size:18px;}
-    .info-box{background:var(--teal-light);border-left:4px solid var(--teal-primary);padding:20px 24px;border-radius:8px;margin:24px 0;}
-    .contact{background:var(--bg);border-radius:12px;padding:24px;margin:32px 0;}
-    .contact h3{color:var(--teal-primary);margin-bottom:16px;font-size:20px;}
-    .contact-item{display:flex;align-items:center;gap:12px;padding:10px 0;color:var(--text);}
-    .contact-icon{width:40px;height:40px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal-primary);font-weight:700;flex-shrink:0;}
-    .footer{margin-top:40px;padding-top:32px;border-top:2px solid var(--border);text-align:center;}
+    ul li{padding:10px 0 10px 36px;position:relative;color:var(--text)}
+    ul li:before{content:'✓';position:absolute;left:0;color:var(--teal-primary);font-weight:700;font-size:18px}
+    .info-box{background:var(--teal-light);border-left:4px solid var(--teal-primary);padding:20px 24px;border-radius:8px;margin:24px 0}
+    .info-box.warning{background:var(--warning-light);border-left-color:var(--warning)}
+    .info-box p{margin:8px 0}
+    .table-wrapper{overflow-x:auto;margin:20px 0}
+    table{width:100%;border-collapse:collapse;background:white}
+    th,td{padding:16px;text-align:left;border-bottom:1px solid var(--border)}
+    th{background:var(--teal-light);color:var(--teal-dark);font-weight:600}
+    tr:last-child td{border-bottom:none}
+    .contact{background:var(--bg);border-radius:12px;padding:24px;margin:32px 0}
+    .contact h3{color:var(--teal-primary);margin-bottom:16px;font-size:20px}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:10px 0;color:var(--text)}
+    .contact-icon{width:40px;height:40px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal-primary);font-weight:700;flex-shrink:0}
+    .footer{margin-top:40px;padding-top:32px;border-top:2px solid var(--border);text-align:center}
     .footer p{color:var(--text-muted);margin-bottom:20px}
-    .button{display:inline-block;background:var(--teal-primary);color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s;}
-    .button:hover{background:var(--teal-dark)}
+    .button{display:inline-block;background:var(--teal-primary);color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s;margin:8px}
+    .button:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,137,123,0.3)}
+    .button.secondary{background:white;color:var(--teal-primary);border:2px solid var(--teal-primary)}
+    .button.secondary:hover{background:var(--teal-light)}
     @media (max-width:640px){
       .header{padding:32px 20px}
       .header h1{font-size:28px}
@@ -47,6 +60,8 @@
       .card{padding:24px;border-radius:12px}
       h2{font-size:20px}
       .contact{padding:20px}
+      table{font-size:14px}
+      th,td{padding:12px 8px}
     }
   </style>
 </head>
@@ -62,51 +77,185 @@
       <div class="badge">Last Updated: December 3, 2025</div>
 
       <p class="intro">
-        This Privacy Policy explains how the Tranzola app (“we”, “our”, or “us”) manages information. Tranzola is developed by <strong>Waqas Ali</strong> and operated under <strong>NayaPixel Innovation</strong>. We are committed to a private, secure, and transparent user experience.
+        This Privacy Policy describes how Tranzola ("we," "our," or "us"), developed by <strong>Waqas Ali</strong> and operated under <strong>NayaPixel Innovation</strong>, collects, uses, stores, and protects your information. We are committed to transparency and protecting your privacy rights.
       </p>
 
-      <h2>1. Information Collection</h2>
-      <p>Tranzola may collect limited data to provide its services, including:</p>
+      <div class="info-box warning">
+        <p><strong>Important:</strong> By downloading, installing, or using Tranzola, you agree to this Privacy Policy. If you do not agree, please discontinue use of the app immediately.</p>
+      </div>
+
+      <h2>1. Information We Collect</h2>
+      <p>Tranzola collects and processes the following types of information:</p>
+
+      <h3>1.1 Translation Data</h3>
+      <p>When you use translation features, the text or voice input you provide is transmitted to the <strong>Google Translate API</strong> for processing. This data is:</p>
       <ul>
-        <li><strong>In-app purchases:</strong> Payment data is processed securely via Google Play Billing. We do not store your payment details.</li>
-        <li><strong>Advertisements:</strong> AdMob may collect device identifiers and anonymized data for personalized ads.</li>
-        <li><strong>Push Notifications:</strong> Firebase Messaging may store your device token to send notifications.</li>
-        <li><strong>User consent:</strong> We collect consent status via Google’s User Messaging Platform (UMP) for ads and data tracking.</li>
+        <li>Sent over secure HTTPS connections</li>
+        <li>Not stored on our servers</li>
+        <li>Processed according to Google's privacy policies</li>
+        <li>Deleted after translation completion</li>
       </ul>
 
-      <h2>2. Translation Data</h2>
-      <p>To provide translation services, any <strong>text or voice</strong> you input is securely sent to the <strong>Google Translate API</strong>. We do not store or share this data.</p>
+      <h3>1.2 Payment Information</h3>
+      <p>For in-app purchases, payment processing is handled by <strong>Google Play Billing</strong>. We do not collect, store, or have access to your payment card details. Google processes all transactions securely.</p>
+
+      <h3>1.3 Advertising Data</h3>
+      <p>We use <strong>Google AdMob</strong> to display advertisements. AdMob may collect:</p>
+      <ul>
+        <li>Device advertising identifiers (e.g., Google Advertising ID)</li>
+        <li>IP address</li>
+        <li>Device information (model, OS version)</li>
+        <li>App usage data for ad personalization</li>
+      </ul>
+
+      <h3>1.4 Device and Usage Information</h3>
+      <p>We may automatically collect:</p>
+      <ul>
+        <li>Device type and operating system version</li>
+        <li>App version and crash reports</li>
+        <li>Language preferences</li>
+        <li>Anonymous usage statistics to improve app performance</li>
+      </ul>
+
+      <h3>1.5 Push Notification Tokens</h3>
+      <p><strong>Firebase Cloud Messaging</strong> stores device tokens to enable push notifications. You can disable notifications in your device settings at any time.</p>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use collected information for the following purposes:</p>
+      <ul>
+        <li>Providing translation services through Google Translate API</li>
+        <li>Processing in-app purchases and managing subscriptions</li>
+        <li>Displaying personalized or non-personalized advertisements</li>
+        <li>Sending push notifications about app updates or features</li>
+        <li>Analyzing app performance and fixing bugs</li>
+        <li>Complying with legal obligations</li>
+      </ul>
+
+      <div class="info-box">
+        <p><strong>No Sale of Data:</strong> We do not sell your personal information to third parties. Data shared with service providers is only for the purposes described in this policy.</p>
+      </div>
 
       <h2>3. Third-Party Services</h2>
+      <p>Tranzola integrates the following third-party services, each with its own privacy policy:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Privacy Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Translate API</strong></td>
+              <td>Translation processing</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Play Billing</strong></td>
+              <td>In-app purchases</td>
+              <td><a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Payments Privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>AdMob</strong></td>
+              <td>Advertising</td>
+              <td><a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob Privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Firebase Messaging</strong></td>
+              <td>Push notifications</td>
+              <td><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google UMP</strong></td>
+              <td>Consent management</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Data Retention</h2>
+      <p>We retain data only as long as necessary:</p>
       <ul>
-        <li>Google Play Billing</li>
-        <li>AdMob (Google)</li>
-        <li>Firebase Messaging (Google)</li>
-        <li>Google Translate API</li>
+        <li><strong>Translation data:</strong> Not retained; processed and immediately discarded</li>
+        <li><strong>Advertising IDs:</strong> Retained by AdMob per their policies</li>
+        <li><strong>Crash reports:</strong> Retained for up to 90 days for debugging</li>
+        <li><strong>Consent preferences:</strong> Stored locally on your device</li>
       </ul>
-      <p>We do not control third-party data handling. Please refer to each service’s privacy policy for details.</p>
 
-      <h2>4. Data Security</h2>
-      <p>All communications with third-party services occur over secure HTTPS channels. No sensitive personal data is stored locally, minimizing risks.</p>
+      <h2>5. Data Security</h2>
+      <p>We implement industry-standard security measures:</p>
+      <ul>
+        <li>All data transmission uses encrypted HTTPS/TLS protocols</li>
+        <li>No sensitive personal data is stored locally on your device</li>
+        <li>Third-party services comply with industry security standards</li>
+        <li>Regular security audits of our infrastructure</li>
+      </ul>
+      <p>However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
 
-      <h2>5. Children’s Privacy</h2>
-      <p>Tranzola does not knowingly collect personal information from children under 13. The app is safe for general audiences.</p>
+      <h2>6. Children's Privacy (COPPA Compliance)</h2>
+      <p>Tranzola does not knowingly collect personal information from children under 13 years of age. The app is designed for general audiences. If you believe a child has provided personal information to us, please contact us immediately at <strong>muhaammaadwaqas@gmail.com</strong>, and we will take steps to delete such information.</p>
 
-      <h2>6. Policy Updates</h2>
-      <p>We may revise this Privacy Policy as needed. Updates will be reflected in the “Last Updated” date. Continued use of the app means acceptance of the updated policy.</p>
+      <h2>7. Your Privacy Rights</h2>
+      <p>Depending on your location, you may have the following rights:</p>
 
-      <h2>7. Contact Information</h2>
-      <p>If you have questions or requests, reach out to us:</p>
+      <h3>7.1 European Union (GDPR)</h3>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of your personal data</li>
+        <li><strong>Rectification:</strong> Correct inaccurate data</li>
+        <li><strong>Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+        <li><strong>Restriction:</strong> Limit how we process your data</li>
+        <li><strong>Portability:</strong> Receive your data in a structured format</li>
+        <li><strong>Object:</strong> Opt-out of data processing for certain purposes</li>
+        <li><strong>Withdraw consent:</strong> Revoke consent at any time</li>
+      </ul>
 
-      <h2>8. Your Rights</h2>
-<p>Depending on your location, you may have the following rights regarding your personal data:</p>
-<ul>
-  <li><strong>European Union (GDPR):</strong> You have the right to access, correct, or request deletion of your personal data. You can also object to data processing or withdraw consent at any time.</li>
-  <li><strong>California, USA (CCPA):</strong> California residents have the right to know what personal data is collected, request deletion of their data, and opt-out of the sale of personal data.</li>
-  <li><strong>Other Regions:</strong> You may have similar privacy rights under local laws. Please contact us for details.</li>
-</ul>
-<p>To exercise your rights, contact us at <strong>muhaammaadwaqas@gmail.com</strong>.</p>
-      
+      <h3>7.2 California, USA (CCPA/CPRA)</h3>
+      <ul>
+        <li>Know what personal information is collected</li>
+        <li>Know whether personal information is sold or shared</li>
+        <li>Request deletion of personal information</li>
+        <li>Opt-out of the sale or sharing of personal information</li>
+        <li>Non-discrimination for exercising privacy rights</li>
+      </ul>
+
+      <h3>7.3 Other Regions</h3>
+      <p>Users in other jurisdictions may have similar rights under local privacy laws. Contact us to learn more about your specific rights.</p>
+
+      <div class="info-box">
+        <p><strong>To exercise your rights:</strong> Email us at <strong>muhaammaadwaqas@gmail.com</strong> with your request. We will respond within 30 days.</p>
+      </div>
+
+      <h2>8. Advertising Choices</h2>
+      <p>You can control ad personalization:</p>
+      <ul>
+        <li><strong>Android:</strong> Settings → Google → Ads → Opt out of Ads Personalization</li>
+        <li><strong>In-app consent:</strong> Modify your choices through Google's UMP consent dialog</li>
+        <li><strong>Reset Advertising ID:</strong> Settings → Google → Ads → Reset advertising ID</li>
+      </ul>
+
+      <h2>9. International Data Transfers</h2>
+      <p>Your information may be transferred to and processed in countries other than your own. We rely on approved transfer mechanisms such as:</p>
+      <ul>
+        <li>Standard Contractual Clauses (SCCs)</li>
+        <li>Adequacy decisions by relevant authorities</li>
+        <li>Service provider compliance with international frameworks</li>
+      </ul>
+
+      <h2>10. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. Changes will be indicated by updating the "Last Updated" date at the top of this policy. Material changes will be communicated through:</p>
+      <ul>
+        <li>In-app notifications</li>
+        <li>Email (if you have provided contact information)</li>
+        <li>App store update notes</li>
+      </ul>
+      <p>Continued use of Tranzola after changes become effective constitutes acceptance of the revised policy.</p>
+
+      <h2>11. Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
 
       <div class="contact">
         <h3>Get in Touch</h3>
@@ -119,7 +268,6 @@
           </div>
         </div>
 
-  
         <div class="contact-item">
           <div class="contact-icon">🏢</div>
           <div>
@@ -132,14 +280,32 @@
           <div class="contact-icon">✉️</div>
           <div>
             <strong>Email</strong><br>
-            muhaammaadwaqas@gmail.com
+            <a href="mailto:muhaammaadwaqas@gmail.com">muhaammaadwaqas@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">⏱️</div>
+          <div>
+            <strong>Response Time</strong><br>
+            We aim to respond within 48-72 hours
           </div>
         </div>
       </div>
 
+      <h2>12. Legal Basis for Processing (GDPR)</h2>
+      <p>For users in the EU/EEA, we process your data based on:</p>
+      <ul>
+        <li><strong>Consent:</strong> For advertising and analytics</li>
+        <li><strong>Contract performance:</strong> To provide translation services and process purchases</li>
+        <li><strong>Legitimate interests:</strong> To improve app functionality and security</li>
+        <li><strong>Legal obligations:</strong> To comply with applicable laws</li>
+      </ul>
+
       <div class="footer">
-        <p>Thank you for using Tranzola. Your privacy and security are our top priority.</p>
-        <a href="#" class="button" onclick="window.print();return false">Export as PDF</a>
+        <p>Thank you for trusting Tranzola. Your privacy and security are our highest priorities.</p>
+        <a href="#" class="button" onclick="window.print();return false">📄 Export as PDF</a>
+        <a href="mailto:muhaammaadwaqas@gmail.com" class="button secondary">✉️ Contact Support</a>
       </div>
 
     </article>
