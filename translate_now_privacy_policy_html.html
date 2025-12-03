@@ -17,138 +17,29 @@
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html,body{height:100%;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-
-    .header{
-      background:var(--teal-primary);
-      color:white;
-      padding:48px 20px;
-      text-align:center;
-    }
+    .header{background:var(--teal-primary);color:white;padding:48px 20px;text-align:center;}
     .header h1{font-size:36px;margin-bottom:8px;font-weight:700}
     .header .subtitle{font-size:16px;opacity:0.95}
-
     .container{max-width:900px;margin:-40px auto 48px;padding:0 20px;position:relative}
-
-    .card{
-      background:var(--card);
-      border-radius:16px;
-      padding:40px;
-      position:relative;
-    }
-
-    .badge{
-      display:inline-block;
-      background:var(--teal-light);
-      color:var(--teal-dark);
-      padding:8px 16px;
-      border-radius:20px;
-      font-size:14px;
-      font-weight:600;
-      margin-bottom:24px;
-    }
-
-    .intro{
-      font-size:18px;
-      color:var(--text-muted);
-      margin-bottom:32px;
-      padding-bottom:24px;
-      border-bottom:2px solid var(--border);
-    }
-
-    h2{
-      font-size:22px;
-      margin:32px 0 16px;
-      color:var(--teal-primary);
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    h2:before{
-      content:'';
-      width:4px;
-      height:24px;
-      background:var(--teal-primary);
-      border-radius:2px;
-    }
-
+    .card{background:var(--card);border-radius:16px;padding:40px;position:relative;}
+    .badge{display:inline-block;background:var(--teal-light);color:var(--teal-dark);padding:8px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:24px;}
+    .intro{font-size:18px;color:var(--text-muted);margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--border);}
+    h2{font-size:22px;margin:32px 0 16px;color:var(--teal-primary);font-weight:700;display:flex;align-items:center;gap:12px;}
+    h2:before{content:'';width:4px;height:24px;background:var(--teal-primary);border-radius:2px;}
     p{margin:12px 0;color:var(--text)}
     strong{color:var(--teal-dark)}
-
     ul{margin:16px 0 24px 0;padding-left:0;list-style:none}
-    ul li{
-      padding:10px 0 10px 36px;
-      position:relative;
-      color:var(--text);
-    }
-    ul li:before{
-      content:'✓';
-      position:absolute;
-      left:0;
-      color:var(--teal-primary);
-      font-weight:700;
-      font-size:18px;
-    }
-
-    .info-box{
-      background:var(--teal-light);
-      border-left:4px solid var(--teal-primary);
-      padding:20px 24px;
-      border-radius:8px;
-      margin:24px 0;
-    }
-
-    .contact{
-      background:var(--bg);
-      border-radius:12px;
-      padding:24px;
-      margin:32px 0;
-    }
-    .contact h3{
-      color:var(--teal-primary);
-      margin-bottom:16px;
-      font-size:20px;
-    }
-    .contact-item{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:10px 0;
-      color:var(--text);
-    }
-    .contact-icon{
-      width:40px;
-      height:40px;
-      background:var(--teal-light);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--teal-primary);
-      font-weight:700;
-      flex-shrink:0;
-    }
-
-    .footer{
-      margin-top:40px;
-      padding-top:32px;
-      border-top:2px solid var(--border);
-      text-align:center;
-    }
+    ul li{padding:10px 0 10px 36px;position:relative;color:var(--text);}
+    ul li:before{content:'✓';position:absolute;left:0;color:var(--teal-primary);font-weight:700;font-size:18px;}
+    .info-box{background:var(--teal-light);border-left:4px solid var(--teal-primary);padding:20px 24px;border-radius:8px;margin:24px 0;}
+    .contact{background:var(--bg);border-radius:12px;padding:24px;margin:32px 0;}
+    .contact h3{color:var(--teal-primary);margin-bottom:16px;font-size:20px;}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:10px 0;color:var(--text);}
+    .contact-icon{width:40px;height:40px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal-primary);font-weight:700;flex-shrink:0;}
+    .footer{margin-top:40px;padding-top:32px;border-top:2px solid var(--border);text-align:center;}
     .footer p{color:var(--text-muted);margin-bottom:20px}
-
-    .button{
-      display:inline-block;
-      background:var(--teal-primary);
-      color:white;
-      padding:14px 32px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-      transition:background 0.3s;
-    }
+    .button{display:inline-block;background:var(--teal-primary);color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s;}
     .button:hover{background:var(--teal-dark)}
-
     @media (max-width:640px){
       .header{padding:32px 20px}
       .header h1{font-size:28px}
@@ -168,50 +59,44 @@
 
   <main class="container">
     <article class="card">
-      <div class="badge">Last Updated: November 18, 2025</div>
+      <div class="badge">Last Updated: December 3, 2025</div>
 
       <p class="intro">
         This Privacy Policy explains how the Tranzola app (“we”, “our”, or “us”) manages information. Tranzola is developed by <strong>Waqas Ali</strong> and operated under <strong>NayaPixel Innovation</strong>. We are committed to a private, secure, and transparent user experience.
       </p>
 
-      <h2>1. No Personal Data Collection</h2>
-      <p>Tranzola does <strong>not</strong> collect, store, or share any personal user information.</p>
-
-      <div class="info-box">
-        <p><strong>We do NOT collect:</strong></p>
-        <ul style="margin:12px 0">
-          <li>Names, phone numbers, or email addresses</li>
-          <li>Contact list or address book data</li>
-          <li>Location (GPS, network, or background location)</li>
-          <li>Cookies, device IDs, or tracking identifiers</li>
-          <li>Analytics tied to identity</li>
-        </ul>
-      </div>
-
-      <h2>2. Translation Data</h2>
-      <p>To provide translation services, any <strong>text or voice</strong> you input is securely sent to the <strong>Google Translate API</strong> for processing.</p>
-
+      <h2>1. Information Collection</h2>
+      <p>Tranzola may collect limited data to provide its services, including:</p>
       <ul>
-        <li>We do not store or save your text or voice inputs</li>
-        <li>We do not use translation content for analytics</li>
-        <li>We do not share translation data with any third party except Google</li>
-        <li>Tranzola does not process or upload images</li>
+        <li><strong>In-app purchases:</strong> Payment data is processed securely via Google Play Billing. We do not store your payment details.</li>
+        <li><strong>Advertisements:</strong> AdMob may collect device identifiers and anonymized data for personalized ads.</li>
+        <li><strong>Push Notifications:</strong> Firebase Messaging may store your device token to send notifications.</li>
+        <li><strong>User consent:</strong> We collect consent status via Google’s User Messaging Platform (UMP) for ads and data tracking.</li>
       </ul>
 
+      <h2>2. Translation Data</h2>
+      <p>To provide translation services, any <strong>text or voice</strong> you input is securely sent to the <strong>Google Translate API</strong>. We do not store or share this data.</p>
+
       <h2>3. Third-Party Services</h2>
-      <p>Tranzola uses only the Google Translate API. We do not control Google’s internal data handling. Please refer to Google’s Privacy Policy for more details.</p>
+      <ul>
+        <li>Google Play Billing</li>
+        <li>AdMob (Google)</li>
+        <li>Firebase Messaging (Google)</li>
+        <li>Google Translate API</li>
+      </ul>
+      <p>We do not control third-party data handling. Please refer to each service’s privacy policy for details.</p>
 
       <h2>4. Data Security</h2>
-      <p>All communication with the Google API occurs over secure HTTPS channels. Since no personal information is stored, data exposure risks remain minimal.</p>
+      <p>All communications with third-party services occur over secure HTTPS channels. No sensitive personal data is stored locally, minimizing risks.</p>
 
       <h2>5. Children’s Privacy</h2>
-      <p>Tranzola does not collect personal data from users of any age. The app is safe for general audiences, including children.</p>
+      <p>Tranzola does not knowingly collect personal information from children under 13. The app is safe for general audiences.</p>
 
       <h2>6. Policy Updates</h2>
-      <p>We may revise this Privacy Policy when necessary. Updates will be reflected in the “Last Updated” date. Continued use of the app means acceptance of the updated policy.</p>
+      <p>We may revise this Privacy Policy as needed. Updates will be reflected in the “Last Updated” date. Continued use of the app means acceptance of the updated policy.</p>
 
       <h2>7. Contact Information</h2>
-      <p>If you have any questions or requests, feel free to reach out:</p>
+      <p>If you have questions or requests, reach out to us:</p>
 
       <div class="contact">
         <h3>Get in Touch</h3>
